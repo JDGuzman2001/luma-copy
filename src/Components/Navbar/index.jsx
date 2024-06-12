@@ -21,19 +21,19 @@ const Navbar = () => {
       };
     
       const formatTimeZone = () => {
-        return "GMT-5"; // Fixed GMT-5 offset
+        return "GMT-5"; 
       };
 
     return (
         <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
             <ul className="flex items-center gap-3">
-                <li className="font-semibold text-lg text-white">
-                    ✨
+                <li className="font-semibold text-sm text-white/60">
+                    luma ✨
                 </li>
                 
             </ul>
             <ul className="flex items-center gap-3">
-                <li className="text-white/60">
+                <li className="text-white/60 text-xs">
                     {/* juandiegouzmanjaimes11@gmail.com */}
                     {formatTime(currentTime)} {formatTimeZone()}
                 </li>
