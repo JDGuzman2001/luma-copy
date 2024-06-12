@@ -1,12 +1,14 @@
 import React from 'react'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import Home from '../Home'
+import SignIn from '../SignIn'
+import Navbar from '../../Components/Navbar'
 import './App.css'
 
 const AppRoutes = () => {
     let routes = useRoutes(
         [
             {path: '/', element: <Home />}, 
-            // {path: '/*', element: <NotFound />},
             {path: '/sign-in', element: <SignIn />},
         ]
         )
@@ -14,9 +16,7 @@ const AppRoutes = () => {
     return routes
 }
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <BrowserRouter>
         <AppRoutes />
