@@ -1,11 +1,45 @@
+import React from 'react';
+import  {AuthProvider, useAuth} from '../../Context/AuthContext'; 
+import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/solid';
 
 
 function SignIn() {
+    const auth = useAuth();
+
+    const handleGoogle = (e) => {
+      e.preventDefault();
+      auth.loginWithGoogle(e)
+    }
+
     return (
-        <div className="col">
-        <h1 className="flex flex-col items-center mt-20">Sign In</h1>
-        <p className="flex flex-col items-center mt-20">Welcome back!</p>
-      </div>
+        <AuthProvider>
+            <div className='flex justify-center items-center h-screen'>
+                <div className='flex flex-col rounded-lg bg-black/10 p-6'>
+                  {/* <ArrowLeftEndOnRectangleIcon className='size-10 text-white/10' /> */}
+                  <div 
+                      className=" top-0 left-0 flex justify-center items-center bg-white/10 w-20 h-20 rounded-full m-2 p-1 mb-10">
+                      <ArrowLeftEndOnRectangleIcon className="size-10 text-white/60"/>
+                  </div>
+                  <h1 className='text-2xl text-white mb-2'>Welcome to luma</h1>
+                  <p className='text-white/60 mb-5'>Please sign in with Google account</p>
+                  <button 
+                    className='flex items-center bg-white/10 text-white/60 py-2 px-7 rounded'
+                    onClick={
+                      (e) => {
+                        handleGoogle(e);
+                      }
+                    }>
+                      <img 
+                          src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" 
+                          alt="Google logo" 
+                          className='h-6 w-6 mr-2 filter grayscale' 
+                      />
+                      Sign In with Google
+                  </button>
+
+                </div>
+            </div>
+        </AuthProvider>
         
     )
   }
