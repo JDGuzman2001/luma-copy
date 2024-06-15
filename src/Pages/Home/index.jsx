@@ -1,9 +1,12 @@
 import Luma_Image from '../../assets/images/Luma_Image.png'
 import { NavLink } from "react-router-dom"
+import Navbar from '../../Components/Navbar'
 
 function Home() {
     return (
+        
         <div className="bg-cover bg-center h-screen flex items-center justify-center">
+            <Navbar/>
             <div className="flex flex-row items-center justify-center w-full">
                 <div className="flex flex-col items-start justify-center mr-10">
                 <p className="text-2xl font-light text-white/60 text-left mb-5">luma</p>

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import React, { useState, useEffect } from "react";
+import { SparklesIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -28,7 +29,8 @@ const Navbar = () => {
         <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
             <ul className="flex items-center gap-3">
                 <li className="font-semibold text-sm text-white/60">
-                    luma ✨
+                    {/* luma ✨ */}
+                    <SparklesIcon className="h-4 w-4 text-white/60"/>
                 </li>
                 
             </ul>

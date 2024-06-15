@@ -1,19 +1,34 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import  {AuthProvider, useAuth} from '../../Context/AuthContext'; 
 import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/solid';
+import Navbar from '../../Components/Navbar';
 
 
 function SignIn() {
     const auth = useAuth();
+    const navigate = useNavigate();
 
-    const handleGoogle = (e) => {
+
+    const handleGoogle = async (e) => {
       e.preventDefault();
-      auth.loginWithGoogle(e)
+      try {
+        await auth.loginWithGoogle(e);
+        const { photoURL } = auth.user;
+        console.log("Photo URL:", photoURL);
+        navigate('/events', { state: { photoURL: photoURL } });
+        console.log("Usuario inició sesión con Google");
+        console.log(auth.user);
+      } catch (error) {
+        console.error("Error al iniciar sesión con Google:", error);
+        // print("Error al iniciar sesión con Google:", error);
+      }
     }
 
     return (
         <AuthProvider>
             <div className='flex justify-center items-center h-screen'>
+            <Navbar/>
                 <div className='flex flex-col rounded-lg bg-black/10 p-6'>
                   {/* <ArrowLeftEndOnRectangleIcon className='size-10 text-white/10' /> */}
                   <div 
