@@ -1,6 +1,7 @@
 import Luma_Image from '../../assets/images/Luma_Image.png'
 import { NavLink } from "react-router-dom"
 import Navbar from '../../Components/Navbar'
+import './Home.css'
 
 function Home() {
     return (
@@ -21,7 +22,7 @@ function Home() {
                     >Sign In
                 </NavLink>
                 </div>
-                <img src={Luma_Image} alt="Luma" className="w-100 h-100" />
+                <img src={Luma_Image} alt="Luma" className="w-200 h-200" />
             </div>
         </div>
     )
