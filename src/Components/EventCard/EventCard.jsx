@@ -2,7 +2,8 @@ import React from 'react';
 import { format, parseISO } from 'date-fns'; // Importa las funciones necesarias de date-fns
 
 const EventCard = (data) => {
-    console.log(data.data.dates.start.localDate);
+    // console.log(data.data.dates.start.localDate);
+    console.log('TIME', data.data.dates.start.localTime);
     // Obtén la fecha en formato ISO para asegurar la compatibilidad con parseISO
     const startDate = parseISO(data.data.dates.start.localDate);
 
@@ -26,6 +27,14 @@ const EventCard = (data) => {
     // Formatear la fecha como 'NombreDia, NombreMes dia'
     const formattedDate = `${getMonthName(startDate.getMonth())} ${startDate.getDate()}`;
     const formattedDay = `${getDayOfWeek(startDate.getDay())}`
+
+    const formatTime = (time) => {
+        const [hour, minute] = time.split(':');
+        const hourInt = parseInt(hour, 10);
+        const period = hourInt >= 12 ? 'PM' : 'AM';
+        const formattedHour = hourInt % 12 || 12; // Convertir 0 a 12 para la hora en formato 12 horas
+        return `${formattedHour}:${minute} ${period}`;
+    };
     return (
         <div className='flex'>
             <div className='w-32'>
@@ -34,6 +43,11 @@ const EventCard = (data) => {
             </div>
             <div className="flex items-center w-full max-w-screen-lg rounded-lg shadow-lg p-4 bg-white/10 mb-10">
                 <div className="flex-1">
+                    {data.data.dates.start.localTime && (
+                        <p className='text-white/10 mb-5'>
+                            {formatTime(data.data.dates.start.localTime)}
+                        </p>
+                    )}
                     <p className="text-sm font-light mb-4 text-white">{data.data.name}</p>
                 </div>
                 <figure className="ml-4 w-24 h-24">

@@ -4,6 +4,7 @@ import NavbarForEvents from "../../Components/NavBarForEvents/NavBarForEvents";
 import './Events.css'
 import EventCard from '../../Components/EventCard/EventCard'
 import { useState, useEffect } from 'react'
+import axios from 'axios';
 
 function Events() {
   const location = useLocation();
@@ -16,32 +17,46 @@ function Events() {
   const [activeTab, setActiveTab] = useState('upcoming');
 
   useEffect(() => {
-    fetch('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=U3yqEyjlVYMTRBJEPhdi9gK9mwj7caNb')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then(data => {
-        // console.log(data); // Imprime los datos recibidos en la consola
-        // setItems(data._embedded.events); // Asegúrate de acceder correctamente a los eventos
-        if (data._embedded && data._embedded.events) {
-          // Eliminar eventos duplicados basados en el nombre
-          const uniqueEvents = data._embedded.events.filter((event, index, self) =>
-            index === self.findIndex((e) => e.name === event.name)
-          );
+    const fetchEvents =  async () => {
+      const apiKey = 'U3yqEyjlVYMTRBJEPhdi9gK9mwj7caNb';
+      const city = 'Houston';
 
-          
-          setItems(uniqueEvents);
+      const currentDate = new Date();
+      
+      const endDate = new Date(currentDate);
+      endDate.setDate(currentDate.getDate() + 7);
+      
+
+      // const startDateStr = currentDate.toISOString();
+      // const endDateStr = endDate.toISOString();
+
+      const formatDate = (date) => {
+        return date.toISOString().replace(/\.\d{3}Z$/, 'Z');
+      };
+
+      const startDateStr = formatDate(currentDate);
+      const endDateStr = formatDate(endDate);
+
+      const params = {
+        apikey: apiKey,
+        city: city,
+        startDateTime: startDateStr,
+        endDateTime: endDateStr,
+        sort: 'date,asc',
+      };
+
+      try {
+        const response = await axios.get('https://app.ticketmaster.com/discovery/v2/events.json', { params });
+        if (response.data._embedded) {
+          setItems(response.data._embedded.events);
         } else {
           setItems([]);
         }
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
+      } catch (error) {
         setError(error);
-      });
+      } 
+    };
+    fetchEvents();
   }, []);
 
   return (

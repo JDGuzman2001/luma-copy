@@ -1,5 +1,6 @@
 body {
     margin: 0;
     height: 100vh;
-    background-image: radial-gradient(circle closest-side at 50% 50%, white, black);
+    /* background-image: radial-gradient(circle closest-side at 50% 50%, white, black); */
+    background-color: #000000 6%;
 }

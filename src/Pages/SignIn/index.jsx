@@ -29,7 +29,7 @@ function SignIn() {
         <AuthProvider>
             <div className='flex justify-center items-center h-screen'>
             <Navbar/>
-                <div className='flex flex-col rounded-lg bg-black/15 p-6'>
+                <div className='flex flex-col rounded-lg bg-white/10 p-6'>
                   <div 
                       className=" top-0 left-0 flex justify-center items-center bg-white/10 w-20 h-20 rounded-full m-2 p-1 mb-10">
                       <ArrowLeftEndOnRectangleIcon className="size-10 text-white/60"/>
