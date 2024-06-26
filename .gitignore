@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-./src/firebase/firebase.config.js
+/src/firebase/
 
 # Editor directories and files
 .vscode/*
