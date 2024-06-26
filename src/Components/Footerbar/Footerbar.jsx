@@ -5,6 +5,7 @@ import AppStoreIcon from "../../assets/icons/app-store-ios.svg";
 import InstagramIcon from "../../assets/icons/instagram.svg";
 import TwitterIcon from "../../assets/icons/twitter.svg";
 
+
 const Footerbar = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
 
