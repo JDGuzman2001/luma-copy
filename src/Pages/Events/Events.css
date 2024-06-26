@@ -1,8 +1,16 @@
+/*
 body {
     margin: 0;
-    height: 100vh;
-    background: linear-gradient(to bottom, #35124f 3%, #000000 6%, #000000 100%);
-    background-repeat: no-repeat; /* Evita que el fondo se repita */
-    background-size: 100% 100%; /* Asegura que el fondo cubra toda la altura */
-    background-attachment: fixed; 
+    height: 100%;
+    background: linear-gradient(to bottom, #35124f 1%, #000000 2%, #000000 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
+*/
+.events-body-background {
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, #35124f 1%, #000000 2%, #000000 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }

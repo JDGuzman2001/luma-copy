@@ -26,7 +26,7 @@ const NavBarForEvents = ({photoURL}) => {
         };
 
     return (
-        <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
+        <nav className="flex justify-between items-center  z-10 top-0 w-full py-5 px-8 text-sm font-light">
             <ul className="flex items-center gap-3">
                 <li className="font-semibold text-sm text-white/60">
                     <SparklesIcon className="h-4 w-4 text-white/60"/>

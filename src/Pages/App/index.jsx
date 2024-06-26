@@ -3,7 +3,6 @@ import { useRoutes, BrowserRouter } from 'react-router-dom'
 import Home from '../Home'
 import SignIn from '../SignIn'
 import Events from '../Events/Events'
-import Navbar from '../../Components/Navbar'
 import './App.css'
 
 const AppRoutes = () => {
@@ -22,7 +21,6 @@ const App = () => {
   return (
     <BrowserRouter>
         <AppRoutes />
-        {/* <Navbar/> */}
     </BrowserRouter>
     
   )

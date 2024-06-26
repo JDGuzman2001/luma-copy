@@ -5,6 +5,7 @@ import './Events.css'
 import EventCard from '../../Components/EventCard/EventCard'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import Footerbar from "../../Components/Footerbar/Footerbar";
 
 function Events() {
   const location = useLocation();
@@ -15,6 +16,14 @@ function Events() {
   const [error, setError] = useState(null);
 
   const [activeTab, setActiveTab] = useState('upcoming');
+
+  useEffect(() => {
+    document.body.classList.add('events-body-background');
+
+    return () => {
+      document.body.classList.remove('events-body-background');
+    };
+  }, []);
 
   useEffect(() => {
     const fetchEvents =  async () => {
@@ -96,6 +105,8 @@ function Events() {
             )
           }
         </div>
+        <Footerbar/>
+        
     </div>
     
   );
