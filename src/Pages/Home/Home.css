@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    height: 100%;
+    background-color: black;
+    /* background: linear-gradient(to bottom, #35124f 1%, #000000 2%, #000000 100%); */
+    /* background-repeat: no-repeat; */
+    background-size: 100% 100%;
+    /* background-attachment: fixed;  */
+}
