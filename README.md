@@ -44,3 +44,8 @@ I have developed a replica of the Luma interface using a combination of modern t
 - Utilizes the TicketMaster API to fetch and display upcoming events in Houston.
 - Events are presented clearly and organized, allowing users to easily explore available options.
 This project has been an excellent opportunity to consolidate my knowledge and skills in modern web development, using a powerful and industry-relevant technological stack.
+![Captura de pantalla 2024-06-25 233938](https://github.com/JDGuzman2001/luma-copy/assets/104080557/1359d8fb-0ecd-439e-8702-e6c94f34d6f5)
+![Captura de pantalla 2024-06-25 233927](https://github.com/JDGuzman2001/luma-copy/assets/104080557/f2f5f4cf-7c3f-42ad-af92-59a3d278019a)
+![Captura de pantalla 2024-06-25 233917](https://github.com/JDGuzman2001/luma-copy/assets/104080557/829cad92-93f0-4da6-b5e6-e17fc547e5b0)
+![Captura de pantalla 2024-06-25 233910](https://github.com/JDGuzman2001/luma-copy/assets/104080557/a84d8679-e55a-4e5c-a846-7884d55c35f0)
+![Captura de pantalla 2024-06-25 233902](https://github.com/JDGuzman2001/luma-copy/assets/104080557/699782c8-a562-4135-b6ac-d5e7425991d9)
